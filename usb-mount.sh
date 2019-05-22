@@ -59,7 +59,7 @@ do_unmount()
     if [[ -z ${MOUNT_POINT} ]]; then
         echo "Warning: ${DEVICE} is not mounted"
     else
-	pmount ${DEVICE}
+	pumount ${DEVICE}
         echo "**** Unmounted ${DEVICE}"
     fi
 
