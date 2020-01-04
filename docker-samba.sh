@@ -9,11 +9,9 @@ docker run --name samba --restart=always -d -t \
 	-p 139:139/tcp \
 	-p 445:445/tcp \
 	-v /media:/data \
+	-v smb.conf:/conf.d/samba/smb.conf \
 	-e USER_NAME=nas \
 	-e USER_PASSWD=12345 \
 	-e USER_UID=${UID} \
 	-e USER_GID=${UID} \
-	-e NETBIOS_NAME=SAMBA \
-	-e WORKGROUP=WORKGROUP \
-	-e SAMBA_SHARE="data=/data,..." \
 	forumi0721alpinearmhf/alpine-armhf-samba:latest
